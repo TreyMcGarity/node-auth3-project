@@ -2,6 +2,7 @@ const express = require("express")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Users = require("../users/users-model")
+require("dotenv").config()
 
 const router = express.Router()
 
@@ -46,10 +47,11 @@ router.post("/login", async (req, res, next) => {
 		}
 		const token = jwt.sign(payload, process.env.JWT_SECRET)
 
-		res.cookie("token", token)
-		res.json({
-			message: `Welcome ${user.username}!`,
-		})
+		res.status(200).cookie("token",token).json({message:`welcome ${user.username}`, token:token})
+		// res.cookie("token", token)
+		// res.json({
+		// 	message: `Welcome ${user.username}!`,
+		// })
 	} catch(err) {
 		next(err)
 	}

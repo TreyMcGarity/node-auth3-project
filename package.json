@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon -r dotenv/config index.js",
-		"start": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
     "helmet": "^3.21.3",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.20.11",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
   }
 }
